@@ -1,4 +1,3 @@
-#makefile
 CC = gcc
 CFLAGS = -std=c11 -g2 -ggdb -pedantic -W -Wall -Wextra
 
@@ -18,9 +17,7 @@ ifeq ($(MODE), release)
   vpath %.o $(OUT_DIR)
 endif
 
-objects =  $(OUT_DIR)/compare_entries.o  $(OUT_DIR)/main.o $(OUT_DIR)/print_entries.o $(OUT_DIR)/walk_directory.o 
-#objects =  $(OUT_DIR)/dirwalk.o $(OUT_DIR)/function.o
-#objects =  main.o lib.o
+objects =  $(OUT_DIR)/compare_entries.o $(OUT_DIR)/main.o $(OUT_DIR)/print_entries.o $(OUT_DIR)/walk_directory.o 
 
 prog = $(OUT_DIR)/dirwalk
 
@@ -29,8 +26,12 @@ all: $(prog)
 $(prog) : $(objects)
 	$(CC) $(CFLAGS) $(objects) -o $@
 
-$(OUT_DIR)/%.o : %.c
-	$(CC) -c $(CFLAGS) $^ -o $@
+й
+$(OUT_DIR)/%.o : %.c | $(OUT_DIR)
+	$(CC) -c $(CFLAGS) $< -o $@
+
+$(OUT_DIR):
+	mkdir -p $(OUT_DIR)
 
 .PHONY: clean
 clean:

@@ -26,7 +26,7 @@ all: $(prog)
 $(prog) : $(objects)
 	$(CC) $(CFLAGS) $(objects) -o $@
 
-й
+
 $(OUT_DIR)/%.o : %.c | $(OUT_DIR)
 	$(CC) -c $(CFLAGS) $< -o $@
 

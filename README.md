@@ -1,6 +1,6 @@
 # Dirwalk
 
-## Установка
+## Установка и запуск
 
 1. **Клонирование репозитория:**
 
@@ -12,21 +12,43 @@
 
     ```bash
     cd dirwalk
-    mkdir build
-    cd build
     ```
 
-3. **Соберите проект с помощью CMake:**
+3. **Соберите проект с помощью make:**
+
+Для сборки в режиме отладки:
 
     ```bash
-    cmake ..
-    make
+    make MODE=debug
     ```
 
-После сборки Вы можете использовать команду dirwalk для обхода директорий:
+Для сборки в режиме выпуска:
 
-    
-    ./dirwalk <directory_path> <options>
+    ```bash
+    make MODE=release
+    ```
+По умолчанию сборка происходит в режиме отладки:
+
+    ```bash
+    make 
+    ```
+
+4. **Запуск программы:**
+
+После сборки Вы можете использовать команду dirwalk для обхода директорий.
+    Если сборка была выполнена в режиме выпуска:
+
+        ```bash
+        cd build/debug
+        ./dirwalk <directory_path> <options>
+        ```
+
+    Если сборка была выполнена в режиме отладки:
+
+        ```bash
+        cd build/release
+        ./dirwalk <directory_path> <options>
+        ```    
     
 
 ## Аргументы
@@ -45,7 +67,7 @@
 
 -  Операционная система на базе Linux/Unix 
 -  Компилятор `gcc` или `clang` (`sudo apt install gcc`)
-- `cmake` для сборки проекта (`sudo apt install cmake`)
+- `make` для сборки проекта 
 
 ## Алиас zsh
 

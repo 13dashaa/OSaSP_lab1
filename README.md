@@ -5,7 +5,7 @@
 1. **Клонирование репозитория:**
 
     ```bash
-    git clone https://github.com/13dashaa/dirwalk.git
+    git clone https://github.com/13dashaa/OSaSP_lab1.git
     ```
 
 2. **Перейдите в директорию репозитория и выполните следующие команды:**

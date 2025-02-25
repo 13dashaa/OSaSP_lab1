@@ -39,16 +39,12 @@
 
 Если сборка была выполнена в режиме выпуска:
 
-        
-        cd build/debug
-        ./dirwalk <directory_path> <options>
+        ./build/debug/dirwalk <directory_path> <options>
         
 
 Если сборка была выполнена в режиме отладки:
 
-        
-        cd build/release
-        ./dirwalk <directory_path> <options>
+        ./build/release/dirwalk <directory_path> <options>
            
     
 

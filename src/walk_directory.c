@@ -1,7 +1,6 @@
 #define _POSIX_C_SOURCE 200809L
 #include "dirwalk.h"
 #include <limits.h> 
-#include <linux/limits.h>
 #include <string.h> 
 
 char **walk_directory(const char *path, int show_links, int show_dirs, int show_files,int sort_entries, int *total_count) {

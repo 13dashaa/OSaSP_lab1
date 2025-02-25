@@ -5,7 +5,7 @@
 1. **Клонирование репозитория:**
 
     ```bash
-    git clone https://github.com/13dashaa/OSaSP_lab1.git
+    git clone https://github.com/13dashaa/OSaSP_lab1.git dirwalk
     ```
 
 2. **Перейдите в директорию репозитория и выполните следующие команды:**
@@ -18,18 +18,18 @@
 
 Для сборки в режиме отладки:
 
-    ```bash
+    ```
     make MODE=debug
     ```
 
 Для сборки в режиме выпуска:
 
-    ```bash
+    ```
     make MODE=release
     ```
 По умолчанию сборка происходит в режиме отладки:
 
-    ```bash
+    ```
     make 
     ```
 
@@ -38,14 +38,14 @@
 После сборки Вы можете использовать команду dirwalk для обхода директорий.
     Если сборка была выполнена в режиме выпуска:
 
-        ```bash
+        ```
         cd build/debug
         ./dirwalk <directory_path> <options>
         ```
 
     Если сборка была выполнена в режиме отладки:
 
-        ```bash
+        ```
         cd build/release
         ./dirwalk <directory_path> <options>
         ```    

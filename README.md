@@ -37,14 +37,14 @@
 
 После сборки Вы можете использовать команду dirwalk для обхода директорий.
 
-Если сборка была выполнена в режиме выпуска:
-
-        ./build/debug/dirwalk <directory_path> <options>
-        
-
 Если сборка была выполнена в режиме отладки:
 
-        ./build/release/dirwalk <directory_path> <options>
+    ./build/debug/dirwalk <directory_path> <options>
+        
+
+Если сборка была выполнена в режиме выпуска:
+
+    ./build/release/dirwalk <directory_path> <options>
            
     
 

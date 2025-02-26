@@ -1,2 +1,8 @@
-
+bin/
+build/
 .vscode/
+*.o
+*.class
+*.exe
+*.out
+*.log

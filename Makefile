@@ -17,7 +17,7 @@ ifeq ($(MODE), release)
   vpath %.o $(OUT_DIR)
 endif
 
-objects =  $(OUT_DIR)/compare_entries.o $(OUT_DIR)/main.o $(OUT_DIR)/print_entries.o $(OUT_DIR)/walk_directory.o 
+objects =  $(OUT_DIR)/auxiliary_functions.o $(OUT_DIR)/main.o $(OUT_DIR)/walk_directory.o 
 
 prog = $(OUT_DIR)/dirwalk
 

@@ -1,20 +1,38 @@
 #ifndef DIRWALK_H
 #define DIRWALK_H
 
+#define _XOPEN_SOURCE 700  // Для nftw или других POSIX функций (если потребуется)
+
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-#include <getopt.h>
-#include <dirent.h>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <unistd.h>
 #include <string.h>
+#include <unistd.h>
+#include <getopt.h>
+#include <errno.h>
+#include <dirent.h>
+#include <sys/stat.h>
+#include <limits.h>
+#include <locale.h>
 
-#define MAX_ENTRIES 1024
 
-char **walk_directory(const char *path, int show_links, int show_dirs, int show_files,int sort_entries, int *total_count);
-int compare_entries(const void *a, const void *b);
-void print_entries(char **entries, int count);
+typedef struct {
+    char **items;
+    size_t count;
+    size_t capacity;
+} PathList;
+
+typedef struct {
+    int l_only;
+    int d_only;
+    int f_only;
+    int sort;
+} Options;
+
+void add_path(PathList *path_list, const char *path); 
+void free_list(PathList *pl);
+int cmp_strcoll(const void *a, const void *b);
+int is_match(const char *path, const struct stat *sb, const Options *opts); 
+void walk_directory(const char *basepath, const Options *opts, PathList *plist);
+ 
 
 #endif
